@@ -2,8 +2,8 @@ import React from 'react'
 
 const NavBar = () => {
   return (
-    <div className='h-16 p-2'>
-      <nav className='fixed z-50 w-full h-16 bg-white text-gray-500 text-lg'>
+    <div className='h-16 px-7'>
+      <nav className='z-50 w-full h-16 bg-white text-gray-500 text-lg'>
         <div className='flex items-center justify-between w-full h-16 max-w-screen-xl mx-auto px-7'>
           <a href='/' className='flex items-center md:mr-3'>
             <img id='logo' src='src\assets\1_invgate-logo.png' alt='InvGate Logo' width='140'/>
