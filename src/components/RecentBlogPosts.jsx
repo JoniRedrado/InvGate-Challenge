@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 
 const RecentBlogPosts = () => {
 
@@ -26,54 +26,57 @@ const RecentBlogPosts = () => {
     },
   ]
 
+  const [ filteredBlogPosts, setFilteredBlogPosts] = useState(posts)
+  
+  const filterByTag = (tag) => {
+    const filtered = posts.filter((e)=> e.tags.includes(tag))
+    setFilteredBlogPosts(filtered)
+  }
 
   return (
-    <div className='w-full px-16 py-8 flex flex-col'>
+    <div className='w-full px-12 lg:px-16 py-8 flex flex-col'>
       <p className='px-5 text-3xl font-semibold'>Recent blog post</p>
       <div id='grid' className='flex flex-col lg:flex-row gap-4'>
+        
+        {/*Main card */}
         <div id='big-card' className='lg:w-1/2 p-5 flex flex-col gap-4'>
-          <img src={posts[0].image} className=' rounded-2xl'/>
+          <img src={filteredBlogPosts[0].image} className=' rounded-2xl'/>
           <div className='flex flex-col p-4 gap-4'>
-            <p className='text-cyan-700 font-semibold'>{posts[0].author}</p>
+            <p className='text-cyan-700 font-semibold'>{filteredBlogPosts[0].author}</p>
             <div className='flex w-full justify-between'>
-              <p className='text-2xl font-semibold'>{posts[0].heading}</p>
+              <p className='text-lg font-medium'>{filteredBlogPosts[0].heading}</p>
               <button>Q</button>
             </div>  
-            <p className='text-lg text-gray-400'>{posts[0].excerpt}</p>
+            <p className='text-lg text-gray-400'>{filteredBlogPosts[0].excerpt}</p>
             <div className='lg:flex lg:flex-row'>
-              {posts[0].tags.map((tag) => {
-                return <a key={tag} className='px-2 m-1 bg-slate-100 rounded-full'>{tag} </a>
+              {filteredBlogPosts[0].tags.map((tag) => {
+                return <a key={tag} className='px-2 m-1 bg-slate-100 rounded-full' onClick={()=>{filterByTag(tag)}}>{tag} </a>
                 })}
             </div>
           </div>
         </div>
+        
         <div id='little-cards-container' className='lg:w-1/2 flex flex-col gap-4 justify-between' >
-          <div id='little-card-1' className='flex flex-col py-5 px-1 sm:flex-row'>
-            <img src={posts[1].image} className=' rounded-2xl sm:w-1/2'/>
-            <div className='flex flex-col p-4 gap-4'>
-              <p className='text-cyan-700 font-semibold'>{posts[1].author}</p>
-              <p className='text-2xl font-semibold'>{posts[1].heading}</p>
-              <p className='text-lg text-gray-400'>{posts[1].excerpt}</p>
-              <div>
-                {posts[1].tags.map((tag) => {
-                  return <a key={tag} className='px-2 m-1 bg-slate-100 rounded-full'>{tag} </a>
-                  })}
+        {/*Little card 1*/}
+        {
+          filteredBlogPosts.map((post, index) => {
+            if (index === 0 || filteredBlogPosts.length === 1) return
+            return (<div id='little-card-1' className='flex flex-col py-5 px-1 sm:flex-row' key={index}>
+              <img src={post.image} className=' rounded-2xl sm:w-1/2'/>
+              <div className='flex flex-col p-4 gap-4'>
+                <p className='text-cyan-700 font-semibold'>{post.author}</p>
+                <p className='text-lg font-medium'>{post.heading}</p>
+                <p className='text-lg text-gray-400'>{post.excerpt}</p>
+                <div>
+                  {post.tags.map((tag) => {
+                    return <a key={tag} className='px-2 m-1 bg-slate-100 rounded-full' onClick={()=>{filterByTag(tag)}}>{tag} </a>
+                    })}
+                </div>
               </div>
-            </div>
-          </div>
-          <div id='little-card-2' className='flex flex-col py-5 px-1 sm:flex-row'>
-            <img src={posts[2].image} className=' rounded-2xl sm:w-1/2'/>
-            <div className='flex flex-col p-4 gap-4'>
-              <p className='text-cyan-700 font-semibold'>{posts[2].author}</p>
-              <p className='text-2xl font-semibold'>{posts[2].heading}</p>
-              <p className='text-lg text-gray-400'>{posts[2].excerpt}</p>
-              <div>
-                {posts[2].tags.map((tag) => {
-                  return <a key={tag} className='px-2 m-1 bg-slate-100 rounded-full'>{tag} </a>
-                  })}
-              </div>
-            </div>
-          </div>
+            </div>)
+          })  
+        }
+          
         </div>
       </div>
     </div>
