@@ -83,7 +83,7 @@ const SearchContainer = () => {
           <p className='font-normal text-sm text-slate-400'>We care about your data in our <u className='hover:cursor-pointer'>privacy policy</u></p>
         </div>
       </section>
-      <div id='search-component' className={'fixed inset-0 min-h-full h-fit bg-white bg-opacity-80 backdrop-blur-lg flex flex-col justify-start items-start mt-16 p-16 gap-5 lg:items-center ' + searching} >
+      <div id='search-component' className={'fixed inset-0 min-h-full h-fit bg-white bg-opacity-80 backdrop-blur-lg flex flex-col justify-start items-start mt-16 p-16 gap-5 lg:items-center overflow-auto max-h-screen ' + searching} >
         <form onSubmit={search} className='h-12 w-full lg:w-2/4 flex flex-row sm:flex-row justify-center'>
           <button type='submit' className='p-1 sm:py-3 sm:px-5 bg-sky-500 rounded-l-lg'>🔍</button>
           <input className='p-2 rounded-r-lg sm:w-full' type='text' placeholder='I’m looking for…' value={input} onChange={handleChange}/>
