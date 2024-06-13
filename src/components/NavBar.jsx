@@ -51,19 +51,41 @@ const NavBar = () => {
           <div id='menu-mobile'  className={' grow w-full h-[calc(100vh_-_60px)] max-h-screen px-4 pb-6 left-0 overflow-y-auto bg-white top-16 z-10 fixed lg:block lg:top-20 lg:p-0 lg:overflow-visible lg:w-auto lg:h-auto lg:static menu-mobile ' + showNavbar}>
             <ul className='flex flex-col w-full lg:flex-row px-5' role='menu'>
               <li className='relative menu-item hover:bg-pink-50 rounded-lg'>
-                <div className=' text-base flex items-center justify-center gap-2 px-3 py-3 font-medium border-t cursor-pointer border-gray-light-200 lg:py-2 text-gray-light-600 lg:rounded-lg lg:border-none lg:justify-start menu-text'>Products</div>
+                <div className=' text-base flex items-center justify-center gap-2 px-3 py-3 font-medium border-t cursor-pointer border-gray-light-200 lg:py-2 text-gray-light-600 lg:rounded-lg lg:border-none lg:justify-start menu-text'>
+                  Products
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M12 17.27l-5.79-5.79L7 10l5 5 5-5 0.79 0.79L12 17.27z"/>
+                  </svg>
+                </div>
               </li>
               <li className='relative menu-item hover:bg-pink-50 rounded-lg'>
-                <div className=' text-base flex items-center justify-center gap-2 px-3 py-3 font-medium border-t cursor-pointer border-gray-light-200 lg:py-2 text-gray-light-600 lg:rounded-lg lg:border-none lg:justify-start menu-text'>Solutions</div>
+                <div className=' text-base flex items-center justify-center gap-2 px-3 py-3 font-medium border-t cursor-pointer border-gray-light-200 lg:py-2 text-gray-light-600 lg:rounded-lg lg:border-none lg:justify-start menu-text'>
+                  Solutions
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M12 17.27l-5.79-5.79L7 10l5 5 5-5 0.79 0.79L12 17.27z"/>
+                  </svg>
+                </div>
               </li>
               <li className='relative menu-item hover:bg-pink-50 rounded-lg'>
-                <div className=' text-base flex items-center justify-center gap-2 px-3 py-3 font-medium border-t cursor-pointer border-gray-light-200 lg:py-2 text-gray-light-600 lg:rounded-lg lg:border-none lg:justify-start menu-text'>Pricing</div>
+                <div className=' text-base flex items-center justify-center gap-2 px-3 py-3 font-medium border-t cursor-pointer border-gray-light-200 lg:py-2 text-gray-light-600 lg:rounded-lg lg:border-none lg:justify-start menu-text'>
+                  Pricing
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M12 17.27l-5.79-5.79L7 10l5 5 5-5 0.79 0.79L12 17.27z"/>
+                  </svg>
+                </div>
               </li>
               <li className='relative menu-item hover:bg-pink-50 rounded-lg'>
-                <div className=' text-base flex items-center justify-center gap-2 px-3 py-3 font-medium border-t cursor-pointer border-gray-light-200 lg:py-2 text-gray-light-600 lg:rounded-lg lg:border-none lg:justify-start menu-text'>Resources</div>
+                <div className=' text-base flex items-center justify-center gap-2 px-3 py-3 font-medium border-t cursor-pointer border-gray-light-200 lg:py-2 text-gray-light-600 lg:rounded-lg lg:border-none lg:justify-start menu-text'>
+                  Resources
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M12 17.27l-5.79-5.79L7 10l5 5 5-5 0.79 0.79L12 17.27z"/>
+                  </svg>
+                </div>
               </li>
               <li className='relative menu-item hover:bg-pink-50 rounded-lg'>
-                <div className='flex items-center justify-center gap-2 px-3 py-3 text-base font-medium border-t border-b cursor-pointer border-gray-light-200 lg:py-2 text-gray-light-600 hover:text-gray-light-600 lg:hover:bg-gray-light-200 lg:rounded-lg lg:border-none lg:justify-start'>Blogs</div>
+                <div className='flex items-center justify-center gap-2 px-3 py-3 text-base font-medium border-t border-b cursor-pointer border-gray-light-200 lg:py-2 text-gray-light-600 hover:text-gray-light-600 lg:hover:bg-gray-light-200 lg:rounded-lg lg:border-none lg:justify-start'>
+                  Blogs
+                </div>
               </li>
             </ul>
             <div>
