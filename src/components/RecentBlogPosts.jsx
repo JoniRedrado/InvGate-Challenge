@@ -50,7 +50,7 @@ const RecentBlogPosts = () => {
             <p className='text-lg text-gray-400'>{filteredBlogPosts[0].excerpt}</p>
             <div className='lg:flex lg:flex-row'>
               {filteredBlogPosts[0].tags.map((tag) => {
-                return <a key={tag} className='px-2 m-1 bg-slate-100 rounded-full' onClick={()=>{filterByTag(tag)}}>{tag} </a>
+                return <a key={tag} className='px-2 m-1 bg-slate-100 rounded-full hover:cursor-pointer' onClick={()=>{filterByTag(tag)}}>{tag} </a>
                 })}
             </div>
           </div>
@@ -69,7 +69,7 @@ const RecentBlogPosts = () => {
                 <p className='text-lg text-gray-400'>{post.excerpt}</p>
                 <div>
                   {post.tags.map((tag) => {
-                    return <a key={tag} className='px-2 m-1 bg-slate-100 rounded-full' onClick={()=>{filterByTag(tag)}}>{tag} </a>
+                    return <a key={tag} className='px-2 m-1 bg-slate-100 rounded-full hover:cursor-pointer' onClick={()=>{filterByTag(tag)}}>{tag} </a>
                     })}
                 </div>
               </div>

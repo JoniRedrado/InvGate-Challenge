@@ -52,7 +52,7 @@ const Podcast = () => {
                   <p className='text-lg text-gray-400'>{podcast.excerpt}</p>
                   <div className='lg:flex lg:flex-row'>
                     {podcast.tags.map((tag) => {
-                      return <a key={tag} className='px-2 m-1 bg-slate-100 rounded-full' onClick={()=>{filterByTag(tag)}}>{tag} </a>
+                      return <a key={tag} className='px-2 m-1 bg-slate-100 rounded-full hover:cursor-pointer' onClick={()=>{filterByTag(tag)}}>{tag} </a>
                       })}
                   </div>
                 </div>
