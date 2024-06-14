@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { LanguageMenuIcon, NavbarArrow } from './svg/svgIcons'
+import LanguageSelector from './LanguageSelector'
 
 const NavBar = () => {
 
@@ -10,7 +12,7 @@ const NavBar = () => {
   }
 
   return (
-    <div className='h-16 px-7'>
+    <div className='h-16'>
       <nav className='z-50 w-full h-16 bg-white text-gray-500 text-lg fixed'>
         <div className='flex items-center justify-between w-full h-16 max-w-screen-xl mx-auto px-7'>
           <a href='/' className='flex items-center md:mr-3'>
@@ -21,25 +23,10 @@ const NavBar = () => {
             <a id='subscribe-header' className='hidden button button--small text-lg sm:block hover:cursor-pointer hover:bg-sky-900 text-white bg-sky-500 py-2 px-4 rounded-lg'>Subscribe</a>
             <div className='relative menu-item' tabIndex='0' role='menu-item'>
               <button className='p-2' onClick={()=>setShowLanguageSelector(!showLanguageSelector)}>
-                🌐
+                <LanguageMenuIcon />
               </button>
               { showLanguageSelector && (
-                <div className='absolute right-0 z-20 mt-4 bg-white border border-gray-200 shadow-lg rounded-xl ' role='menu' >
-                  <div className='p-2' data-menu='language'>
-                    <a className='flex px-3 py-2 text-sm font-medium text-gray-light-600 hover:text-gray-light-600 hover:bg-pink-50 hover:cursor-pointer lg:rounded-lg'>
-                      {/*<svg>Agregar banderas de idioma</svg>*/}
-                      <span>English</span>
-                    </a>
-                    <a className='flex px-3 py-2 text-sm font-medium text-gray-light-600 hover:text-gray-light-600 hover:bg-pink-50 hover:cursor-pointer lg:rounded-lg '>
-                      {/*<svg>Agregar banderas de idioma</svg>*/}
-                      <span>Español</span>
-                    </a>
-                    <a className='flex px-3 py-2 text-sm font-medium text-gray-light-600 hover:text-gray-light-600 hover:bg-pink-50 hover:cursor-pointer lg:rounded-lg'>
-                      {/*<svg>Agregar banderas de idioma</svg>*/}
-                      <span>Português</span>
-                    </a>
-                  </div>
-                </div>
+                <LanguageSelector />
               )}
             </div>
             <div data-target='menu-mobile' className='p-2 rounded-lg cursor-pointer text-body lg:hidden menu-toggler' onClick={toggleNavbar}>
@@ -53,33 +40,25 @@ const NavBar = () => {
               <li className='relative menu-item hover:bg-pink-50 rounded-lg'>
                 <div className=' text-base flex items-center justify-center gap-2 px-3 py-3 font-medium border-t cursor-pointer border-gray-light-200 lg:py-2 text-gray-light-600 lg:rounded-lg lg:border-none lg:justify-start menu-text'>
                   Products
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M12 17.27l-5.79-5.79L7 10l5 5 5-5 0.79 0.79L12 17.27z"/>
-                  </svg>
+                  <NavbarArrow />
                 </div>
               </li>
               <li className='relative menu-item hover:bg-pink-50 rounded-lg'>
                 <div className=' text-base flex items-center justify-center gap-2 px-3 py-3 font-medium border-t cursor-pointer border-gray-light-200 lg:py-2 text-gray-light-600 lg:rounded-lg lg:border-none lg:justify-start menu-text'>
                   Solutions
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M12 17.27l-5.79-5.79L7 10l5 5 5-5 0.79 0.79L12 17.27z"/>
-                  </svg>
+                  <NavbarArrow />
                 </div>
               </li>
               <li className='relative menu-item hover:bg-pink-50 rounded-lg'>
                 <div className=' text-base flex items-center justify-center gap-2 px-3 py-3 font-medium border-t cursor-pointer border-gray-light-200 lg:py-2 text-gray-light-600 lg:rounded-lg lg:border-none lg:justify-start menu-text'>
                   Pricing
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M12 17.27l-5.79-5.79L7 10l5 5 5-5 0.79 0.79L12 17.27z"/>
-                  </svg>
+                  <NavbarArrow />
                 </div>
               </li>
               <li className='relative menu-item hover:bg-pink-50 rounded-lg'>
                 <div className=' text-base flex items-center justify-center gap-2 px-3 py-3 font-medium border-t cursor-pointer border-gray-light-200 lg:py-2 text-gray-light-600 lg:rounded-lg lg:border-none lg:justify-start menu-text'>
                   Resources
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M12 17.27l-5.79-5.79L7 10l5 5 5-5 0.79 0.79L12 17.27z"/>
-                  </svg>
+                  <NavbarArrow />
                 </div>
               </li>
               <li className='relative menu-item hover:bg-pink-50 rounded-lg'>
